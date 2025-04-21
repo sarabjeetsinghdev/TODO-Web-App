@@ -155,13 +155,13 @@ export default function Home(): JSX.Element {
       {/* Main container with responsive padding and gradient background */}
       <main className="flex min-h-screen flex-col items-center p-4 sm:p-12 md:p-24 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
         {/* Animated wrapper div with fade-in effect */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="w-full max-w-md">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           {/* Card component with glass-morphism effect and theme transitions */}
-          <Card className="w-full max-w-md shadow-2xl border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md transition-all duration-300">
+          <Card className="shadow-2xl border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md transition-all duration-300 absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4 md:w-[80%]">
             {/* Header section with app title and theme toggle */}
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               {/* App title with drop shadow effect */}
-              <div className="text-center text-3xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100 drop-shadow-sm">TODO App</div>
+              <div className="text-3xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100 drop-shadow-sm py-3 text-center">TODO App</div>
               {/* Theme toggle button with accessibility label */}
               <Button
                 variant="ghost"
@@ -196,7 +196,7 @@ export default function Home(): JSX.Element {
               <div className="space-y-3">
                 {/* Empty state message */}
                 {todos.length === 0 && (
-                  <p className="text-center text-gray-400 dark:text-gray-500 italic animate-fade-in">No tasks yet!</p>
+                  <p className="text-center text-gray-400 dark:text-gray-500 italic animate-fade-in px-4"><small>Just type in your task and press Enter.<br/>You can also press Add button after typing!</small></p>
                 )}
                 {/* Animated list of todo items */}
                 <AnimatePresence>
